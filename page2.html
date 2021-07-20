@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page2</title>
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button:active {
+            transform: scale(0.98);
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        }
+
+        .center {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <script src=script_page2.js></script>
+    
+    <h1>Interact with and modify saved users.</h1>
+    <div id="result"></div>
+    <input type="button" class="button" onclick="return allStorage()" id="outputbtn" name="outputbtn"
+        value="Display All Users">
+    <input type="button" class="button" onclick="return Clear()" id="cleanbtn" name="cleanbtn" value="Reset/Clear UI">
+    <input type="button" class="button" onclick="return Home()" id="processbtn" name="processbtn"
+        value="Back"><br><br><br>
+    <div id="result_sex"></div><div id="age_gender"></div>
+    <input type="button" class="button" onclick="maleFilter();Male_ageStats()" id="malebtn" name="malebtn"
+        value="Show Males and Ages">
+    <input type="button" class="button" onclick="femaleFilter();Female_ageStats();" id="femalebtn" name="femalebtn"
+        value="Show Females and Ages"><br><br><br>
+    <div id="result_age"></div>
+    <input type="button" class="button" onclick="return ageStats()" id="agebtn" name="agebtn"
+        value="Age Stats for all Users"><br><br><br>
+    <hr><br><br>
+    <input type="button" class="button" onclick="return DeleteUser()" id="deletebtn" name="deletebtn"
+        value="Delete User"><br><br>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <br><br>
+    <input type="button" class="button" onclick="return ShowForm(1)" id="editbtn" name="editbtn" value="Edit User">
+    <br><br>
+    <label for="fname2">First name:</label>
+    <input type="text" id="fname2" name="fname2"><br><br>
+    <label for="lname2">Last name:</label>
+    <input type="text" id="lname2" name="lname2"><br><br>
+
+    <form id="EditForm" class="center" method="post">
+        <label for="form_fname">First name:</label>
+        <input type="text" id="form_fname" name="form_fname"><br><br>
+        <label for="form_lname">Last name:</label>
+        <input type="text" id="form_lname" name="form_lname"><br><br>
+        <input type="radio" name="gender" id="gender" value="male"> Male
+        <input type="radio" name="gender" id="gender2" value="female"> Female<br><br>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday"><br><br>
+        <input type="button" class="button" onclick="return EditUser()" id="savebtn" name="savebtn"
+            value="Save Changes">
+    </form>
+</body>
+
+</html>
